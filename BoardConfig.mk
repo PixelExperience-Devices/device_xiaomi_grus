@@ -23,10 +23,12 @@ DEVICE_PATH := device/xiaomi/grus
 TARGET_OTA_ASSERT_DEVICE := grus
 
 # Kernel
+BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := grus_defconfig
 
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
