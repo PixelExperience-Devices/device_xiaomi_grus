@@ -1,2 +1,5 @@
+# Fingerprint under display HAL
+/system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.xiaomi_grus    u:object_r:hal_fod_grus_exec:s0
+
 # HIDL manifest
 /system/etc/manifest\.xml    u:object_r:vendor_configs_file:s0
