@@ -37,6 +37,14 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Inherit from sdm710-common
 $(call inherit-product, device/xiaomi/sdm710-common/sdm710.mk)
 
+# Device init scripts
+PRODUCT_PACKAGES += \
+    init.target.rc
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/etc/manifest.xml
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
