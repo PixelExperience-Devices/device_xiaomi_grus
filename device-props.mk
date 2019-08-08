@@ -14,3 +14,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.eyecare.brightness.threshold=11 \
     ro.eyecare.brightness.level=5 \
     ro.hist.brightness.threshold=7
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.settings.xml=/system/etc/media_profiles_vendor.xml
