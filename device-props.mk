@@ -11,6 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display features
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.displayfeature.histogram.enable=true \
     ro.eyecare.brightness.threshold=11 \
     ro.eyecare.brightness.level=5 \
     ro.hist.brightness.threshold=7
@@ -18,3 +19,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.settings.xml=/system/etc/media_profiles_vendor.xml
+
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nfc.port=I2C
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.uicc_se_enabled=true
