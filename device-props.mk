@@ -18,7 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.settings.xml=/system/etc/media_profiles_vendor.xml
+    media.settings.xml=/system/etc/media_profiles_vendor.xml
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
