@@ -41,6 +41,10 @@ $(call inherit-product, device/xiaomi/sdm710-common/sdm710.mk)
 PRODUCT_PACKAGES += \
     init.target.rc
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_grus
+
 # HIDL
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/etc/manifest.xml
