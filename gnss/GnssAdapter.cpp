@@ -80,7 +80,6 @@ GnssAdapter::GnssAdapter() :
     mGnssSvTypeConfigCb(nullptr),
     mNiData(),
     mAgpsManager(),
-    mAgpsCbInfo(),
     mOdcpiRequestCb(nullptr),
     mOdcpiRequestActive(false),
     mOdcpiTimer(this),
@@ -722,8 +721,6 @@ GnssAdapter::setConfig()
     //cache the injected configuration with GnssConfigRequested struct
     GnssConfig gnssConfigRequested = {};
     gnssConfigRequested.flags |= GNSS_CONFIG_FLAGS_GPS_LOCK_VALID_BIT |
-            GNSS_CONFIG_FLAGS_LPPE_CONTROL_PLANE_VALID_BIT |
-            GNSS_CONFIG_FLAGS_LPPE_USER_PLANE_VALID_BIT |
             GNSS_CONFIG_FLAGS_BLACKLISTED_SV_IDS_BIT;
     /* Here we process an SSR. We need to set the GPS_LOCK to the proper values, as follows:
     1. Q behavior. This is identified by mSupportNfwControl being 1. In this case
@@ -756,10 +753,17 @@ GnssAdapter::setConfig()
         gnssConfigRequested.aGlonassPositionProtocolMask =
                 gpsConf.A_GLONASS_POS_PROTOCOL_SELECT;
     }
-    gnssConfigRequested.lppeControlPlaneMask =
-            mLocApi->convertLppeCp(gpsConf.LPPE_CP_TECHNOLOGY);
-    gnssConfigRequested.lppeUserPlaneMask =
-            mLocApi->convertLppeUp(gpsConf.LPPE_UP_TECHNOLOGY);
+    if (gpsConf.LPPE_CP_TECHNOLOGY) {
+        gnssConfigRequested.flags |= GNSS_CONFIG_FLAGS_LPPE_CONTROL_PLANE_VALID_BIT;
+        gnssConfigRequested.lppeControlPlaneMask =
+                mLocApi->convertLppeCp(gpsConf.LPPE_CP_TECHNOLOGY);
+    }
+
+    if (gpsConf.LPPE_UP_TECHNOLOGY) {
+        gnssConfigRequested.flags |= GNSS_CONFIG_FLAGS_LPPE_USER_PLANE_VALID_BIT;
+        gnssConfigRequested.lppeUserPlaneMask =
+                mLocApi->convertLppeUp(gpsConf.LPPE_UP_TECHNOLOGY);
+    }
     gnssConfigRequested.blacklistedSvIds.assign(mBlacklistedSvIds.begin(),
                                                 mBlacklistedSvIds.end());
     mLocApi->sendMsg(new LocApiMsg(
@@ -2078,10 +2082,9 @@ GnssAdapter::updateClientsEventMask()
                 mask);
     }
 
-    if (mAgpsCbInfo.statusV4Cb != NULL) {
+    if (mAgpsManager.isRegistered()) {
         mask |= LOC_API_ADAPTER_BIT_LOCATION_SERVER_REQUEST;
     }
-
     // Add ODCPI handling
     if (nullptr != mOdcpiRequestCb) {
         mask |= LOC_API_ADAPTER_BIT_REQUEST_WIFI;
@@ -4111,27 +4114,17 @@ void GnssAdapter::initDefaultAgpsCommand() {
 /* INIT LOC AGPS MANAGER */
 
 void GnssAdapter::initAgps(const AgpsCbInfo& cbInfo) {
-    LOC_LOGD("%s]: mAgpsCbInfo.cbPriority - %d;  cbInfo.cbPriority - %d",
-            __func__, mAgpsCbInfo.cbPriority, cbInfo.cbPriority)
+    LOC_LOGD("%s]:cbInfo.atlType - %d", __func__, cbInfo.atlType);
 
     if (!((ContextBase::mGps_conf.CAPABILITIES & LOC_GPS_CAPABILITY_MSB) ||
             (ContextBase::mGps_conf.CAPABILITIES & LOC_GPS_CAPABILITY_MSA))) {
         return;
     }
 
-    if (mAgpsCbInfo.cbPriority > cbInfo.cbPriority) {
-        return;
-    } else {
-        mAgpsCbInfo = cbInfo;
-
-        mAgpsManager.registerFrameworkStatusCallback((AgnssStatusIpV4Cb)cbInfo.statusV4Cb);
-
-        mAgpsManager.createAgpsStateMachines();
-
-        /* Register for AGPS event mask */
-        updateEvtMask(LOC_API_ADAPTER_BIT_LOCATION_SERVER_REQUEST,
-                LOC_REGISTRATION_MASK_ENABLED);
-    }
+    mAgpsManager.createAgpsStateMachines(cbInfo);
+    /* Register for AGPS event mask */
+    updateEvtMask(LOC_API_ADAPTER_BIT_LOCATION_SERVER_REQUEST,
+            LOC_REGISTRATION_MASK_ENABLED);
 }
 
 void GnssAdapter::initAgpsCommand(const AgpsCbInfo& cbInfo){
