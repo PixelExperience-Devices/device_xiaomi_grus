@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.display;
 
-import com.xiaomi.settings.device.utils.FileUtils;
+import android.os.Bundle;
+import org.lineageos.settings.device.R;
 
-class FlickerFreeUtils {
+public class FlickerFreeSettingsFragment extends NodePreferenceFragment {
 
-    static boolean isSupported() {
-        return FileUtils.fileExists(FlickerFreeConstants.FLICKER_FREE_NODE);
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.flicker_free_settings);
     }
 
 }

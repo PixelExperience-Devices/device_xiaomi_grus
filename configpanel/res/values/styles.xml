@@ -39,4 +39,8 @@
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
 
+    <style name="SettingsSeekBarPreference" parent="SettingsPreference">
+        <item name="widgetLayout">@*android:layout/preference_widget_seekbar</item>
+    </style>
+
 </resources>

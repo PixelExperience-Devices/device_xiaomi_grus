@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.display;
 
 import android.os.Bundle;
-import android.support.v14.preference.PreferenceFragment;
-import android.support.v14.preference.SwitchPreference;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.SwitchPreference;
+import androidx.preference.SeekBarPreference;
+import androidx.preference.Preference;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
-import com.xiaomi.settings.device.utils.FileUtils;
+import org.lineageos.settings.device.utils.FileUtils;
 
 public abstract class NodePreferenceFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -37,9 +37,9 @@ public abstract class NodePreferenceFragment extends PreferenceFragment
             FileUtils.writeLine(node, value ? "1" : "0");
             return true;
         }
-        node = Constants.sStringNodePreferenceMap.get(preference.getKey());
+        node = Constants.sIntNodePreferenceMap.get(preference.getKey());
         if (!TextUtils.isEmpty(node) && FileUtils.isFileWritable(node)) {
-            FileUtils.writeLine(node, (String) newValue);
+            FileUtils.writeLine(node, String.valueOf(newValue));
             return true;
         }
         return false;
@@ -61,17 +61,18 @@ public abstract class NodePreferenceFragment extends PreferenceFragment
                 b.setEnabled(false);
             }
         }
-        for (String pref : Constants.sStringNodePreferenceMap.keySet()) {
-            ListPreference l = (ListPreference) findPreference(pref);
-            if (l == null) continue;
-            l.setOnPreferenceChangeListener(this);
-            String node = Constants.sStringNodePreferenceMap.get(pref);
+        for (String pref : Constants.sIntNodePreferenceMap.keySet()) {
+            SeekBarPreference s = (SeekBarPreference) findPreference(pref);
+            if (s == null) continue;
+            s.setOnPreferenceChangeListener(this);
+            String node = Constants.sIntNodePreferenceMap.get(pref);
             if (FileUtils.isFileReadable(node)) {
-                l.setValue(FileUtils.readOneLine(node));
+                String value = FileUtils.readOneLine(node);
+                if (value != null)
+                    s.setValue(Integer.parseInt(value));
             } else {
-                l.setEnabled(false);
+                s.setEnabled(false);
             }
         }
     }
-
 }

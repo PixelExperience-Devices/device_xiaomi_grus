@@ -16,16 +16,25 @@
 
 package org.lineageos.settings.device;
 
-import android.os.Bundle;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
-public class FlickerFreeSettingsFragment extends NodePreferenceFragment {
+import org.lineageos.settings.device.display.FlickerFreeSettingsActivity;
+import org.lineageos.settings.device.display.Utils;
 
-    private static final String TAG = "FlickerFreeSettingsFragment";
+public class DeviceStartup extends BroadcastReceiver {
+
+    private static final String TAG = "Kowalski OS";
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.flicker_free_settings);
+    public void onReceive(final Context context, final Intent intent) {
+        Log.i(TAG, "Restoring Settings");
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            if (FlickerFreeSettingsActivity.restoreState(context))
+                Utils.restoreNodePrefs(context);
+        }
     }
 
 }

@@ -16,9 +16,29 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <SwitchPreference
-        android:key="flicker_free"
-        android:title="@string/flicker_free_toggle_title"
-        android:summary="@string/flicker_free_toggle_summary" />
+     <SwitchPreference
+          android:key="flicker_free"
+          android:title="@string/flicker_free_toggle_title"
+          android:summary="@string/flicker_free_toggle_summary" />
+
+     <SeekBarPreference
+          android:key="flicker_free_bri"
+          android:layout="@layout/preference_category_seekbar"
+          android:title="@string/flicker_free_toggle_bri_title"
+          android:summary="@string/flicker_free_toggle_bri_summary"
+          android:min="@integer/flicker_free_bri_min"
+          android:defaultValue="@integer/flicker_free_bri_default"
+          android:max="@integer/flicker_free_bri_max" 
+          android:dependency="flicker_free" />
+
+     <SeekBarPreference
+          android:key="flicker_free_exp"
+          android:layout="@layout/preference_category_seekbar"
+          android:title="@string/flicker_free_toggle_exp_title"
+          android:summary="@string/flicker_free_toggle_exp_summary"
+          android:min="@integer/flicker_free_exp_min"
+          android:defaultValue="@integer/flicker_free_exp_default"
+          android:max="@integer/flicker_free_exp_max" 
+          android:dependency="flicker_free" />     
 
 </PreferenceScreen>

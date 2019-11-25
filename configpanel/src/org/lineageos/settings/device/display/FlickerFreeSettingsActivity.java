@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device.display;
 
 import android.app.ActionBar;
 import android.content.Context;
@@ -23,16 +23,14 @@ import android.preference.PreferenceActivity;
 
 public class FlickerFreeSettingsActivity extends PreferenceActivity {
 
-    static boolean isSupported() {
-        return FlickerFreeUtils.isSupported();
-    }
-
-    static void restoreState(Context context) {
-        if (isSupported()) {
+    public static boolean restoreState(Context context) {
+        boolean enabled = FlickerFreeUtils.isSupported();
+        if (enabled) {
             Utils.enableComponent(context, FlickerFreeSettingsActivity.class);
         } else {
             Utils.disableComponent(context, FlickerFreeSettingsActivity.class);
         }
+        return enabled;
     }
 
     @Override

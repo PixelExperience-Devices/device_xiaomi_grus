@@ -18,6 +18,8 @@
     package="org.lineageos.settings.device"
     android:sharedUserId="android.uid.system">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
     <application
         android:icon="@mipmap/ic_launcher_settings"
         android:label="@string/device_settings_app_name"
@@ -26,22 +28,60 @@
         android:directBootAware="true">
 
         <activity
-            android:name=".FlickerFreeSettingsActivity"
-            android:label="@string/flicker_free_settings_title">
+            android:name=".display.FlickerFreeSettingsActivity">
             <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.display" />
             <meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/flicker_free_settings_title" />
+            <meta-data
                 android:name="com.android.settings.summary"
                 android:resource="@string/flicker_free_settings_summary" />
         </activity>
 
-        <receiver android:name=".Startup" >
+        <!--activity
+            android:name=".sound.SoundSettingsActivity">
             <intent-filter>
-                <action android:name="lineageos.intent.action.INITIALIZE_LINEAGE_HARDWARE" />
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.sound" />
+            <meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/sound_settings_title" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/sound_settings_summary" />
+        </activity-->
+
+        <!--activity
+            android:name=".network.NetworkSettingsActivity">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.wireless" />
+            <meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/network_settings_title" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/network_settings_summary" />
+        </activity-->
+
+        <receiver android:name=".DeviceStartup" android:enabled="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
