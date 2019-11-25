@@ -26,16 +26,9 @@
     <dimen name="notch_height">79px</dimen>
     <dimen name="notch_width">124px</dimen>
 
-    <!-- Height of the bottom navigation bar in portrait; often the same as @dimen/navigation_bar_height -->
-    <dimen name="navigation_bar_height_landscape">32.0dip</dimen>
-    <dimen name="navigation_bar_height">32.0dip</dimen>
-
     <!-- Width of the navigation bar when it is placed vertically on the screen -->
     <dimen name="navigation_bar_width">32.0dip</dimen>
 
-    <dimen name="status_bar_edge_ignore">5.0dip</dimen>
-
     <dimen name="rounded_corner_radius_top">108px</dimen>
     <dimen name="rounded_corner_radius_bottom">126px</dimen>
-
 </resources>
