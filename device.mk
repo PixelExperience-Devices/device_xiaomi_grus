@@ -394,7 +394,11 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.xiaomi_sdm710
+    android.hardware.power@1.3-service.grus
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
+    $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf
 
 # Permission
 PRODUCT_COPY_FILES += \
@@ -503,10 +507,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
-# xiaomi doze
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # WiFi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \
@@ -514,8 +514,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-#    UxPerformance \
-#    QPerformance
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -530,37 +528,11 @@ PRODUCT_PACKAGES += \
     SecureElement \
     android.hardware.secure_element@1.0-service
 
-# NFC
-#PRODUCT_PACKAGES += \
-#    nfc_nci.nqx.default.hw \
-#    nfc_nci.nqx.default \
-#    nqnfcee_access.xml \
-#    nqnfcse_access.xml \
-#    libnqnfc-nci \
-#    libnqnfc_nci_jni \
-#    jcos_nq_client \
-#    se_nq_extn_client \
-#    libp61-jcop-kit \
-#    com.gsma.services.nfc \
-#    com.nxp.nfc.nq \
-#    com.nxp.nfc.nq.xml \
-#    com.android.nfc_extras \
-#    vendor.nxp.hardware.nfc@1.1-service \
-#    vendor.nxp.hardware.nfc@1.2-service \
-#    Tag \
-#    NQNfcNci \
-#    android.hardware.nfc@1.2-service \
-#    android.hardware.nfc@1.2-impl
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp_default.conf:system/etc/libnfc-nxp_default.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
-
-# Secure element
-PRODUCT_PACKAGES += \
-    SecureElement
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -578,10 +550,6 @@ PRODUCT_PACKAGES += \
 # Display calibration
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.xiaomi
-
-# dirac app
-PRODUCT_PACKAGES += \
-    Dirac
 
 # Config panel
 PRODUCT_PACKAGES += \
