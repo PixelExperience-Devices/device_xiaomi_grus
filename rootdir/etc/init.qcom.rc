@@ -66,7 +66,6 @@ on init
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
-    insmod /vendor/lib/modules/exfat.ko
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -105,8 +104,14 @@ on early-boot
     chmod 0775 /mnt/vendor/persist/data/pfm/licenses
 
     # Flicker-free
-    chmod 0600 /sys/devices/platform/soc/soc\:qcom,dsi-display@18/msm_fb_ea_enable
-    chown system system /sys/devices/platform/soc/soc\:qcom,dsi-display@18/msm_fb_ea_enable
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_enable
+    chmod 0644 /sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_enable
+
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_min
+    chmod 0644 /sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_min
+
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_elvss_off_treshold
+    chmod 0644 /sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_elvss_off_treshold
 
     # Vibrator
     chown system system /sys/class/leds/vibrator/vmax_override
@@ -252,6 +257,10 @@ on boot
     #sensors log dir
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors
+
+    #create ipacm log dir
+    mkdir /data/vendor/ipa 0770 radio radio
+    chmod 0770 /data/vendor/ipa
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -1152,22 +1161,22 @@ service vendor.move_time_data /system/bin/move_time_data.sh
     disabled
     oneshot
 
-service vendor.hbtp /vendor/bin/hbtp_daemon
-     class main
-     user system
-     group system
-     capabilities SYS_NICE
-     disabled
+#service vendor.hbtp /vendor/bin/hbtp_daemon
+#     class main
+#     user system
+#     group system
+#     capabilities SYS_NICE
+#     disabled
 
-#service chre /vendor/bin/chre
-#    class late_start
-#    user system
-#    group system
-#    socket chre seqpacket 0660 root system
-#    shutdown critical
+service chre /vendor/bin/chre
+    class late_start
+    user system
+    group system
+    socket chre seqpacket 0660 root system
+    shutdown critical
 
-#on property:vendor.chre.enabled=0
-#   stop chre
+on property:vendor.chre.enabled=0
+   stop chre
 
 service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
