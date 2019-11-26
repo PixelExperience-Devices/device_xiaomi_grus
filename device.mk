@@ -540,7 +540,9 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     BluetoothResCommon \
-    libbthost_if
+    libbthost_if \
+    libldacBT_enc \
+    libldacBT_abr
 
 # qti telephony
 PRODUCT_PACKAGES += \
