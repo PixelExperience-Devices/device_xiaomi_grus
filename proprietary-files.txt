@@ -573,7 +573,6 @@ vendor/bin/init.qti.ims.sh
 vendor/bin/cdsprpcd
 vendor/bin/qseecomd
 vendor/bin/pd-mapper
-vendor/bin/ipacm-diag
 vendor/bin/imsrcsd
 vendor/bin/qrtr-cfg
 vendor/bin/netmgrd
@@ -650,7 +649,6 @@ vendor/bin/qrtr-lookup
 vendor/bin/adpl
 vendor/bin/pm-proxy
 vendor/bin/time_daemon
-vendor/bin/ipacm
 vendor/bin/garden_app
 vendor/bin/xtwifi-client
 vendor/bin/power_off_alarm
@@ -751,7 +749,6 @@ vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
 vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
 vendor/etc/init/imsqmidaemon.rc
 vendor/etc/init/netmgrd.rc
-vendor/etc/init/ipacm.rc
 vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
 vendor/etc/init/port-bridge.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
