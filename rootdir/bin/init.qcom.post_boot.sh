@@ -11,7 +11,7 @@ write(){
 
 # Core control parameters on silver
 echo 0 0 0 0 1 1 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
-echo 4 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
+echo 2 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
 echo 60 > /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres
 echo 40 > /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres
 echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
@@ -115,17 +115,19 @@ echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 cpuA=/sys/devices/system/cpu/cpufreq/policy0
 cpuB=/sys/devices/system/cpu/cpufreq/policy6
 
-write $cpuA/scaling_min_freq 300000
+write $cpuA/scaling_min_freq 576000
 write $cpuA/scaling_governor schedutil
 write $cpuA/schedutil/iowait_boost_enable 0
-write $cpuA/schedutil/up_rate_limit_us 1000
-write $cpuA/schedutil/down_rate_limit_us 1000
+write $cpuA/schedutil/pl 0
+write $cpuA/schedutil/up_rate_limit_us 20000
+write $cpuA/schedutil/down_rate_limit_us 500
 
-write $cpuB/scaling_min_freq 300000
+write $cpuB/scaling_min_freq 652000
 write $cpuB/scaling_governor schedutil
 write $cpuB/schedutil/iowait_boost_enable 0
-write $cpuB/schedutil/up_rate_limit_us 1000
-write $cpuB/schedutil/down_rate_limit_us 1000
+write $cpuB/schedutil/pl 0
+write $cpuB/schedutil/up_rate_limit_us 20000
+write $cpuB/schedutil/down_rate_limit_us 500
 
 # Enable idle state listener
 write /sys/class/drm/card0/device/idle_encoder_mask 1
@@ -148,7 +150,7 @@ for i in /sys/block/*/queue; do
   write $i/add_random 0
   write $i/iostats 0
   write $i/rotational 0
-  write $i/scheduler cfq
+  write $i/scheduler bfq
 done
 
 # Reset entropy values
@@ -190,11 +192,6 @@ fi
 #echo 70 > /sys/module/process_reclaim/parameters/pressure_max
 #echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
 #echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-
-bootmode=`getprop ro.bootmode`
-if [ "charger" != $bootmode ]; then
-        start vendor.hbtp
-fi
 
 # Let kernel know our image version/variant/crm_version
 if [ -f /sys/devices/soc0/select_image ]; then

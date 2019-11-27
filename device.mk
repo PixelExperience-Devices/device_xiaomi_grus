@@ -75,6 +75,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
+# IR
+PRODUCT_PACKAGES += \
+    consumerir.default
+
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -201,6 +205,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.vendor \
     libqdMetaData \
     libqdMetaData.vendor \
+    libqdMetaData.system \
     libtinyxml \
     libvulkan \
     vendor.display.config@1.7.vendor \
@@ -281,10 +286,6 @@ PRODUCT_PACKAGES += \
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
-
-# Fingerprint
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/fingerprint/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm710.rc:system/etc/init/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm710.rc
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
@@ -379,6 +380,7 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -387,7 +389,14 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libOmxAacEnc.so \
+    libOmxAmrEnc.so \
+    libOmxCore.so \
+    libOmxEvrcEnc.so \
+    libOmxG711Enc.so \
+    libOmxQcelp13Enc.so \
+    libstagefrighthw \
+    libgui_vendor
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -490,6 +499,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
+    libwifi-hal \
     libwifi-hal-qcom \
     libwpa_client \
     wpa_supplicant \
@@ -559,3 +569,9 @@ PRODUCT_PACKAGES += \
 # Config panel
 PRODUCT_PACKAGES += \
     ConfigPanel
+
+# vndfwk
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.qti
+
