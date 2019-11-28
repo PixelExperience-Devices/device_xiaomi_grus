@@ -652,6 +652,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 #   group wifi inet keystore
     interface android.hardware.wifi.supplicant@1.0::ISupplicant default
     interface android.hardware.wifi.supplicant@1.1::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.2::ISupplicant default
     class main
     socket vendor_wpa_wlan0 dgram 660 wifi wifi
     disabled
@@ -1148,25 +1149,12 @@ service seemp_healthd /vendor/bin/seemp_healthd
     user system
     group system
 
-service vendor.power_off_alarm /vendor/bin/power_off_alarm
-#    class core
-#    group system
-#    disabled
-#    oneshot
-
 service vendor.move_time_data /system/bin/move_time_data.sh
     class main
     user system
     group system
     disabled
     oneshot
-
-#service vendor.hbtp /vendor/bin/hbtp_daemon
-#     class main
-#     user system
-#     group system
-#     capabilities SYS_NICE
-#     disabled
 
 service chre /vendor/bin/chre
     class late_start

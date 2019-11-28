@@ -25,7 +25,6 @@ lib64/vendor.qti.gnss@3.0.so
 lib64/com.qualcomm.qti.ant@1.0.so
 lib64/libqdMetaData.so
 lib64/com.qualcomm.qti.dpm.api@1.0.so
-vendor/lib64/libhbtpdsp.so
 lib64/libdpmtcm.so
 lib64/vendor.qti.hardware.radio.ims@1.4.so
 lib64/com.qualcomm.qti.imscmservice@2.0.so
@@ -45,7 +44,6 @@ lib64/libseemore.so
 lib64/libqdMetaData.system.so
 lib64/lib-imsvideocodec.so
 lib64/vendor.qti.hardware.radio.ims@1.2.so
-vendor/lib64/libhbtpclient.so
 lib64/vendor.qti.gnss@1.1.so
 lib64/libmmparser_lite.so
 lib64/libwfdclient.so
@@ -53,7 +51,6 @@ lib64/vendor.qti.hardware.radio.ims@1.3.so
 lib64/libmmrtpencoder.so
 lib64/vendor.qti.gnss@1.2.so
 lib64/libdpmfdmgr.so
-vendor/lib64/libhbtpfrmwk.so
 lib64/libmmosal.so
 framework/com.quicinc.cne.api-V1.1-java.jar
 framework/com.qualcomm.qti.uceservice-V2.1-java.jar
@@ -594,7 +591,6 @@ vendor/bin/seemp_healthd
 vendor/bin/poweroffm64
 vendor/bin/wigighalsvc
 vendor/bin/wigignpt
-vendor/bin/hbtp_daemon
 vendor/bin/adsprpcd
 vendor/bin/qti
 vendor/bin/vsimd
@@ -720,15 +716,6 @@ vendor/etc/thermal-engine-sdm710.conf
 vendor/etc/thermal-engine-sdm710-nolimits.conf
 vendor/etc/thermal-engine-sdm710-sgame.conf
 vendor/etc/thermal-engine-sdm710-high.conf
-vendor/etc/hbtp/qtc801s.bin
-vendor/etc/hbtp/qtc800h.bin
-vendor/etc/hbtp/hbtpcfg.dat
-vendor/etc/hbtp/hbtpcfg_sdm710_800h_qhd.dat
-vendor/etc/hbtp/qtc800s_dsp.bin
-vendor/etc/hbtp/hbtpcfg_sdm710_800s_fhd.dat
-vendor/etc/hbtp/loader.cfg
-vendor/etc/hbtp/hbtpcfg_sdm710_801s_2k.dat
-vendor/etc/hbtp/hbtpcfg_sdm710_801s_qhd.dat
 vendor/etc/cacert_location.pem
 vendor/etc/spk_cal_pinknoise.wav
 vendor/etc/lm/AdaptLaunchFeature.xml
@@ -1463,7 +1450,6 @@ lib/com.qualcomm.qti.ant@1.0.so
 lib/libwfdconfigutils.so
 lib/libqdMetaData.so
 lib/com.qualcomm.qti.dpm.api@1.0.so
-vendor/lib/libhbtpdsp.so
 lib/libdpmtcm.so
 lib/vendor.qti.hardware.radio.ims@1.4.so
 lib/com.qualcomm.qti.imscmservice@2.0.so
@@ -1486,7 +1472,6 @@ lib/libwfdmmsink.so
 lib/libqdMetaData.system.so
 lib/lib-imsvideocodec.so
 lib/vendor.qti.hardware.radio.ims@1.2.so
-vendor/lib/libhbtpclient.so
 lib/libwfdmminterface.so
 lib/libmmparser_lite.so
 lib/libwfdclient.so
@@ -1495,5 +1480,4 @@ lib/libmmrtpencoder.so
 lib/libwfduibcsinkinterface.so
 lib/libdpmfdmgr.so
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-vendor/lib/libhbtpfrmwk.so
 lib/libmmosal.so

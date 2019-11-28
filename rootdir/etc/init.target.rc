@@ -86,7 +86,6 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/nnhal 0700 system system
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
@@ -111,7 +110,6 @@ on property:sys.boot_completed=1
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
-    chown system system /sys/kernel/hbtp/display_pwr
     chown system system /sys/class/leds/white/brightness
     chown system system /sys/class/leds/white/blink
     chown system system /sys/class/drm/card0-DSI-1/disp_param
@@ -497,12 +495,6 @@ on property:init.svc.vendor.hwcomposer-2-3=restarting
 #    socket vqtss stream 0660 system system
 #    user system
 #    group system
-
-service hbtp /system/vendor/bin/hbtp_daemon
-     class main
-     user system
-     group system
-     disabled
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main
