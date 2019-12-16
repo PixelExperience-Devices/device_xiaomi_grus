@@ -12,14 +12,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.multicam.framesync=1 \
     persist.vendor.camera.multicam=TRUE
 
+# Google Assistant
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.opa.eligible_device=true
+
 # Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=8m
+# PRODUCT_PROPERTY_OVERRIDES += \
+#     dalvik.vm.heapgrowthlimit=192m \
+#     dalvik.vm.heapstartsize=8m \
+#     dalvik.vm.heapsize=512m \
+#     dalvik.vm.heaptargetutilization=0.75 \
+#     dalvik.vm.heapminfree=512k \
+#     dalvik.vm.heapmaxfree=8m
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -27,7 +31,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.vendor.ims.disableUserAgent=0
 
-#PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
+     persist.env.fastdorm.enabled=true
 #    persist.radio.rat_on=combine \
 #    persist.radio.data_ltd_sys_ind=1 \
 #    persist.radio.data_con_rprt=1
@@ -35,16 +40,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Disable sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.debug.sensors.hal=0
-
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.ssr=false \
-    ro.qc.sdk.audio.fluencetype=none \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=true \
-    use.voice.path.for.pcm.voip=true \
-    tunnel.audio.encode=true
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -101,9 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.debug.coresight.config=stm-events \
 	config.disable_rtt=true \
 	ro.nfc.port=I2C \
-	audio.offload.gapless.enabled=true \
 	sys.qca1530=detect \
-	audio.offload.buffer.size.kb=32 \
 	av.offload.enable=true \
 	persist.fuse_sdcard=true \
 	ro.bluetooth.emb_wp_mode=false \
