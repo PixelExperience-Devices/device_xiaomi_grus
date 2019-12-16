@@ -11,7 +11,7 @@ BUILD_BROKEN_DUP_RULES := true
 DEVICE_PATH := device/xiaomi/grus
 
 # Security Patch Level
-VENDOR_SECURITY_PATCH := 2019-09-01
+VENDOR_SECURITY_PATCH := 2019-11-01
 
 # Architecture
 TARGET_ARCH := arm64
@@ -33,6 +33,8 @@ TARGET_USES_64_BIT_BINDER := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm710
 TARGET_NO_BOOTLOADER := true
+
+ALLOW_ADBD_ROOT := true
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
