@@ -10,16 +10,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Vendor
 $(call inherit-product-if-exists, vendor/xiaomi/grus/grus-vendor.mk)
 
+# Properties
+-include $(LOCAL_PATH)/common-props.mk
+-include $(LOCAL_PATH)/device-props.mk
+-include $(LOCAL_PATH)/vendor-props.mk
+
+# setup audio configs
+$(call inherit-product, $(LOCAL_PATH)/audio/sdm710.mk)
+
+# setupe dalvik vm properties
+$(call inherit-product, $(LOCAL_PATH)/configs/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Properties
--include $(LOCAL_PATH)/common-props.mk
--include $(LOCAL_PATH)/device-props.mk
--include $(LOCAL_PATH)/vendor-props.mk
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -108,6 +114,7 @@ PRODUCT_PACKAGES += \
     libaudioroute \
     libhdmiedid \
     libhfp \
+    audiod \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -139,19 +146,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-
-#    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-#    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-#    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-#    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-#    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -176,11 +176,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     libcnefeatureconfig \
     services-ext
-
-# Context hub HAL
-PRODUCT_PACKAGES += \
-    android.hardware.contexthub@1.0-impl.generic \
-    android.hardware.contexthub@1.0-service
 
 # Consumer IR
 PRODUCT_PACKAGES += \
@@ -515,8 +510,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_wcn.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_wcn.conf \
-    $(LOCAL_PATH)/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
+    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # WiFi Display
@@ -548,10 +542,14 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     BluetoothResCommon \
     libbthost_if \
     libldacBT_enc \
-    libldacBT_abr
+    libldacBT_abr \
+    hwaddrs \
+    libbt-vendor
 
 # qti telephony
 PRODUCT_PACKAGES += \
