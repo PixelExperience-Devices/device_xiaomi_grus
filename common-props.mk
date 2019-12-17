@@ -115,7 +115,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.enableadvancedscan=true \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.procedure_bytes=SKIP \
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.flexmap_type=none \
     persist.vendor.radio.force_on_dc=true \
@@ -143,7 +143,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
 
 # FP
