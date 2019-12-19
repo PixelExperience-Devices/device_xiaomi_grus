@@ -80,10 +80,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
-# IR
-PRODUCT_PACKAGES += \
-    consumerir.default
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -232,36 +228,19 @@ PRODUCT_PACKAGES += \
     libgnss \
     libwifi-hal-ctrl
 
+# IR
+PRODUCT_PACKAGES += \
+    consumerir.default
 
-# Stick with QTI gatekeeper/keymaster as for now
-# Gatekeeper HAL
-#PRODUCT_PACKAGES += \
-#    android.hardware.gatekeeper@1.0-impl \
-#    android.hardware.gatekeeper@1.0-service
-
-# Keymaster
-#PRODUCT_PACKAGES += \
-#    android.hardware.keymaster@3.0-impl \
-#    android.hardware.keymaster@3.0-service \
-#    android.hardware.keymaster@4.0-impl \
-#    android.hardware.keymaster@4.0-service
-
-#PRODUCT_PACKAGES += \
-#    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
 
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
 
-
 # IMS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager
-
-# Custom Doze
-PRODUCT_PACKAGES += \
-    CustomDoze
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -303,8 +282,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-#PRODUCT_BOOT_JARS += \
-#    org.ifaa.android.manager
+PRODUCT_BOOT_JARS += \
+    org.ifaa.android.manager
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -339,10 +318,6 @@ PRODUCT_PACKAGES += \
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# Media
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:system/etc/media_profiles_vendor.xml
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -473,7 +448,9 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.1-service.grus
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+#    android.hardware.vibrator@1.1-service.grus
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
@@ -485,25 +462,20 @@ PRODUCT_PACKAGES += \
     android.hardware.vr@1.0-service \
     vr.sdm710
 
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libnl
-
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    vendor.qti.hardware.wifi.hostapd@1.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     hostapd \
     libwifi-hal \
     libwifi-hal-qcom \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf \
-    vendor.qti.hardware.wifi.hostapd@1.0.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     hostapd_cli \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    vendor.qti.hardware.wifi.supplicant@1.0_vendor \
     wificond \
     wifilogd
 
@@ -528,11 +500,11 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0-service \
     android.hardware.nfc@1.1-service \
-    NfcNci \
     Tag \
+    NfcNci \
     SecureElement \
-    android.hardware.secure_element@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf \
