@@ -230,11 +230,6 @@ PRODUCT_PACKAGES += \
     libgnss \
     libwifi-hal-ctrl
 
-# IR
-PRODUCT_PACKAGES += \
-    consumerir.default
-
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
@@ -468,6 +463,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     vendor.qti.hardware.wifi.hostapd@1.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@1.0.vendor \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     hostapd \
     libwifi-hal \
@@ -515,8 +511,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service \
     BluetoothResCommon \
     libbthost_if \
     libldacBT_enc \
