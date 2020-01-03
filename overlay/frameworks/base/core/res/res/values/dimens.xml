@@ -28,6 +28,7 @@
 
     <!-- Width of the navigation bar when it is placed vertically on the screen -->
     <dimen name="navigation_bar_width">32.0dip</dimen>
+    <dimen name="navigation_bar_height">40.0dip</dimen>
 
     <dimen name="rounded_corner_radius_top">108px</dimen>
     <dimen name="rounded_corner_radius_bottom">126px</dimen>
