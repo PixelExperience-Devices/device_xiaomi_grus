@@ -54,16 +54,13 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>"softap0"</item>
-        <item>"wigig0"</item>
-        <item>"wifi_br0"</item>
+        <item>"wlan\\d"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
          should be empty. -->
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>"bnep\\d"</item>
         <item>"bt-pan"</item>
     </string-array>
 
@@ -1144,4 +1141,6 @@
     <string name="config_SmartChargingResumeValue" translatable="false">0</string>
 
     <bool name="config_adaptive_sleep_available">true</bool>
+
+    <bool name="config_ui_enableFadingMarquee">false</bool>
 </resources>
