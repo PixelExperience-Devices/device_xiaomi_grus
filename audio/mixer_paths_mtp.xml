@@ -502,14 +502,6 @@
         <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
     </path>
 
-    <path name="ultrasound-proximity-output headphones">
-        <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
-    </path>
-
-    <path name="ultrasound-proximity-output handset">
-        <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
-    </path>
-
     <path name="ultrasound-proximity-input">
     </path>
 
