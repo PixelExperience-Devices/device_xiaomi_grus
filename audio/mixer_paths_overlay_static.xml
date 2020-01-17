@@ -20,7 +20,7 @@
     <ctl name="EAR_S" value="ZERO" />
     <ctl name="AMP PCM Gain" value="16" />
     <ctl name="PCM Soft Ramp" value="4ms" />
-    <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_96" />
+    <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_48" />
 
 
     <path name="deep-buffer-playback">
@@ -390,7 +390,7 @@
     </path>
 
     <path name="handset">
-        <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_96" />
+        <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_48" />
         <ctl name="RX1 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX1" />
         <ctl name="EAR_S" value="Switch" />
