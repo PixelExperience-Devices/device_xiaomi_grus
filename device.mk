@@ -545,3 +545,9 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     CustomDoze
+
+#ContextHub
+PRODUCT_PACKAGES += \	
+    android.hardware.contexthub@1.0-impl.generic \	
+    android.hardware.contexthub@1.0-service
+
