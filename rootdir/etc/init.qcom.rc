@@ -1156,14 +1156,6 @@ service vendor.move_time_data /system/bin/move_time_data.sh
     disabled
     oneshot
 
-service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service	
-    override	
-    class hal	
-    interface android.hardware.contexthub@1.0::IContexthub default	
-    user system	
-    group system	
-    disabled
-
 service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
     disabled
