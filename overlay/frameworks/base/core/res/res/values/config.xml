@@ -1140,4 +1140,6 @@
     <bool name="config_adaptive_sleep_available">true</bool>
 
     <bool name="config_ui_enableFadingMarquee">false</bool>
+
+    <bool name="config_enableSmartPixels">true</bool>
 </resources>
