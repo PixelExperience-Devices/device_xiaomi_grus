@@ -21,8 +21,9 @@
          1 = front
          2 = left side
          3 = right side
+	 4 = FOD (front)
     -->
-    <integer name="config_fingerprintSensorLocation">1</integer>
+    <integer name="config_fingerprintSensorLocation">4</integer>
     <bool name="config_enableManualSubProvisioning">true</bool>
 
     <!-- Whether or not the device is capable of multiple levels of vibration intensity.
