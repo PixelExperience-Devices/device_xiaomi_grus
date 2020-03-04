@@ -21,4 +21,5 @@
          * 2: show the clock in the left position (LTR)
     -->
     <integer name="def_clock_position">2</integer>
+    <bool name="def_stats_collection">false</bool>
 </resources>
