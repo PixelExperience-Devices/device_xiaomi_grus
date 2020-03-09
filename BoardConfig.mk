@@ -204,9 +204,6 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
-# Malloc
-MALLOC_SVELTE := true
-
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
