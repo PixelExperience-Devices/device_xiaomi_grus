@@ -150,3 +150,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.fp.fod=true \
     persist.vendor.sys.fp.fod.location.X_Y=448,1938 \
     persist.vendor.sys.fp.fod.size.width_height=185,185
+
+# Enable Value Added AOSP support
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
+
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.qti.va_odm.support=1
+
