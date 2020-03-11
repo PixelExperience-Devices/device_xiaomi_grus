@@ -149,22 +149,21 @@
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
         <transport>hwbinder</transport>
-        <version>2.3</version>
+        <version>2.2</version>
         <interface>
             <name>IComposer</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.3::IComposer/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="32+64">passthrough</transport>
-        <version>2.1</version>
+        <version>2.0</version>
         <interface>
             <name>IMapper</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.1::IMapper/default</fqname>
+        <fqname>@2.0::IMapper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.health</name>
@@ -448,7 +447,6 @@
             <name>IDisplayConfig</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.7::IDisplayConfig/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.display.postproc</name>
