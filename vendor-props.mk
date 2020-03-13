@@ -39,4 +39,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.df.effect.conflict=1 \
     sys.haptic.down.weak=3 \
     sys.haptic.down.normal=8 \
-    sys.haptic.down.strong=18 
+    sys.haptic.down.strong=18 \
+    debug.stagefright.ccodec=4 \
+    debug.stagefright.omx_default_rank=512
