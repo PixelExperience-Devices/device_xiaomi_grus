@@ -86,7 +86,8 @@ static bool isGnssClient(LocationCallbacks& locationCallbacks)
             locationCallbacks.trackingCb != nullptr ||
             locationCallbacks.gnssLocationInfoCb != nullptr ||
             locationCallbacks.engineLocationsInfoCb != nullptr ||
-            locationCallbacks.gnssMeasurementsCb != nullptr);
+            locationCallbacks.gnssMeasurementsCb != nullptr ||
+            locationCallbacks.gnssSvPolynomialCb != nullptr);
 }
 
 static bool isBatchingClient(LocationCallbacks& locationCallbacks)
@@ -788,6 +789,20 @@ uint32_t LocationControlAPI::configLeverArm(const LeverArmConfigInfo& configInfo
 
     if (gData.gnssInterface != NULL) {
         id = gData.gnssInterface->configLeverArm(configInfo);
+    } else {
+        LOC_LOGe("No gnss interface available for Location Control API");
+    }
+
+    pthread_mutex_unlock(&gDataMutex);
+    return id;
+}
+
+uint32_t LocationControlAPI::configRobustLocation(bool enable, bool enableForE911) {
+    uint32_t id = 0;
+    pthread_mutex_lock(&gDataMutex);
+
+    if (gData.gnssInterface != NULL) {
+        id = gData.gnssInterface->configRobustLocation(enable, enableForE911);
     } else {
         LOC_LOGe("No gnss interface available for Location Control API");
     }
