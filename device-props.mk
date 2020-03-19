@@ -29,20 +29,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.ims_volte_enable=1 \
-    persist.radio.aosp_usr_pref_sel=true \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.data_ltd_sys_ind=1 \
-    persist.vendor.radio.data_con_rprt=1 \
-    persist.radio.calls.on.ims=1 \
-    persist.dbg.wfc_avail_ovr=1 \
     persist.vendor.ims.disableUserAgent=0 \
     persist.data.netmgrd.qos.enable=true \
-    persist.rcs.supported=0 \
     service.qti.ims.enabled=1 
 
 PRODUCT_PROPERTY_OVERRIDES += \
      persist.env.fastdorm.enabled=true
+#    persist.radio.rat_on=combine \
+#    persist.radio.data_ltd_sys_ind=1 \
+#    persist.radio.data_con_rprt=1
 
 # Disable sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -128,6 +123,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dev.pm.dyn_samplingrate=1 \
 	persist.sys.strictmode.disable=true \
 	persist.radio.dynamic_sar=false \
+	persist.vendor.radio.rat_on=combine \
 	persist.radio.NO_STAPA=1 \
 	persist.radio.VT_HYBRID_ENABLE=1 \
 	persist.radio.modem_dynamic_sar_state=close
