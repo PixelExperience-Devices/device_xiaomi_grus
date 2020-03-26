@@ -1132,14 +1132,7 @@
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
 
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
-
-    <bool name="config_adaptive_sleep_available">true</bool>
-
+    <bool name="config_adaptive_sleep_available">false</bool>
     <bool name="config_ui_enableFadingMarquee">false</bool>
-
     <bool name="config_enableSmartPixels">true</bool>
 </resources>
