@@ -24,7 +24,7 @@
     <bool name="config_statusBarBurnInProtection">true</bool>
 
     <!-- Doze: check proximity sensor before pulsing? -->
-    <bool name="doze_proximity_check_before_pulse">true</bool>
+    <bool name="doze_proximity_check_before_pulse">false</bool>
 
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
