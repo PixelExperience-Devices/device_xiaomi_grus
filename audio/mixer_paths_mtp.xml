@@ -202,7 +202,7 @@
     <ctl name="INT4_MI2S_RX Port Mixer SLIM_8_TX" value="0" />
     <ctl name="INT4_MI2S_RX_DL_HL Switch" value="0" />
     <ctl name="INT0_MI2S_RX Port Mixer SLIM_8_TX" value="0" />
-    <ctl name="INT0_MI2S_RX_DL_HL Switch" value="0" />
+    <!--ctl name="INT0_MI2S_RX_DL_HL Switch" value="0" /-->
     <ctl name="MultiMedia1 Mixer SLIM_8_TX" value="0" />
     <ctl name="MultiMedia2 Mixer SLIM_8_TX" value="0" />
     <!-- fm end -->
@@ -1605,7 +1605,7 @@
     <path name="play-fm headphones">
         <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
         <ctl name="INT0_MI2S_RX Port Mixer SLIM_8_TX" value="1" />
-        <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
+        <!--ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" /-->
     </path>
 
     <path name="incall-rec-uplink">
@@ -1743,7 +1743,7 @@
         <ctl name="INT0_MI2S_RX Port Mixer SLIM_7_TX" value="1" />
         <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia6" value="1" />
         <ctl name="MultiMedia6 Mixer INT3_MI2S_TX" value="1" />
-        <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
+        <!--ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" /-->
     </path>
 
    <path name="hfp-sco-wb">
