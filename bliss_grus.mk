@@ -33,6 +33,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="grus"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/flame/flame:10/QQ2A.200305.003/6156912:user/release-keys
+    ro.build.fingerprint=google/flame/flame:10/QQ2A.200405.005/6254899:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
