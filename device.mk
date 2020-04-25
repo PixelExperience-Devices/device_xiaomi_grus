@@ -552,3 +552,6 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     CustomDoze
+
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
