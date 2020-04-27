@@ -559,4 +559,5 @@ PRODUCT_PACKAGES += \
 # Override Apps
 PRODUCT_PACKAGES += \
     SimpleGalleryPro \
-    SimpleCalculator
+    SimpleCalculator \
+    Exchange2
