@@ -11,7 +11,7 @@ BUILD_BROKEN_DUP_RULES := true
 DEVICE_PATH := device/xiaomi/grus
 
 # Security Patch Level
-VENDOR_SECURITY_PATCH := 2020-02-01
+VENDOR_SECURITY_PATCH := 2020-03-01
 
 # Architecture
 TARGET_ARCH := arm64
