@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2013 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<resources>
+
+  <!-- Background colors for InCallUI. This is a set of colors which pass WCAG
+       AA and all have a contrast ratio over 5:1.
+
+      These colors are also used by InCallUIMaterialColorMapUtils to generate
+      primary activity colors.
+  -->
+  <array name="background_colors">
+    <item>#00796B</item>
+    <item>#3367D6</item>
+    <item>#303F9F</item>
+    <item>#7B1FA2</item>
+    <item>#C2185B</item>
+    <item>#C53929</item>
+    <item>#A52714</item>
+    <item>@*android:color/primary_dark_device_default_settings</item>
+  </array>
+
+  <!-- Darker versions of background_colors, two shades darker. These colors are used for the
+       status bar. -->
+  <array name="background_colors_dark">
+    <item>#00695C</item>
+    <item>#2A56C6</item>
+    <item>#283593</item>
+    <item>#6A1B9A</item>
+    <item>#AD1457</item>
+    <item>#B93221</item>
+    <item>#841F10</item>
+    <item>@*android:color/primary_dark_device_default_settings</item>
+  </array>
+
+</resources>
