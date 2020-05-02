@@ -18,7 +18,7 @@
 <resources>
 
     <bool name="has_tilt_sensor">true</bool>
-    <bool name="has_proximity_sensor">false</bool>
+    <bool name="has_proximity_sensor">true</bool>
 
     <!-- Defines the custom proximity sensor used by various OEMs like OnePlus-->
     <string name="config_custom_tilt">xiaomi.sensor.pickup</string>
