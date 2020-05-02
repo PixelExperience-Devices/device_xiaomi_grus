@@ -560,4 +560,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimpleGalleryPro \
     SimpleCalculator \
-    Exchange2
+    Exchange2 \
+    Email 
