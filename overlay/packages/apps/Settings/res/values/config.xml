@@ -32,8 +32,5 @@
          have distinct intensity levels -->
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
-    <!-- Device specific doze package -->
-    <string name="config_customDozePackage">com.custom.ambient.display/com.custom.ambient.display.DozeSettings</string>
-
     <bool name="config_show_mobile_plan">true</bool>
 </resources>
