@@ -16,6 +16,8 @@
   -->
 
 <resources>
+  <!-- Background color for status bar. For portrait this will be ignored. -->
+  <color name="statusbar_background_color">@*android:color/primary_dark_device_default_settings</color>
 
   <!-- Background colors for InCallUI. This is a set of colors which pass WCAG
        AA and all have a contrast ratio over 5:1.
@@ -47,4 +49,15 @@
     <item>@*android:color/primary_dark_device_default_settings</item>
   </array>
 
+  <color name="incall_background_gradient_top">@*android:color/primary_dark_device_default_settings</color>
+  <color name="incall_background_gradient_middle">@*android:color/primary_dark_device_default_settings</color>
+  <color name="incall_background_gradient_bottom">@*android:color/primary_dark_device_default_settings</color>
+
+  <color name="incall_background_multiwindow">@*android:color/primary_dark_device_default_settings</color>
+
+  <color name="incall_background_gradient_spam_top">@*android:color/primary_dark_device_default_settings</color>
+  <color name="incall_background_gradient_spam_middle">@*android:color/primary_dark_device_default_settings</color>
+  <color name="incall_background_gradient_spam_bottom">@*android:color/primary_dark_device_default_settings</color>
+
+  <color name="incall_background_multiwindow_spam">@*android:color/primary_dark_device_default_settings</color>
 </resources>
