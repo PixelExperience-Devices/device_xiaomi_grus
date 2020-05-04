@@ -549,10 +549,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LatinIME
 
-# Doze
-PRODUCT_PACKAGES += \
-    CustomDoze
-
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
