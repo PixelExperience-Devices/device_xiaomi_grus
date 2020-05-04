@@ -1137,4 +1137,5 @@
     <bool name="config_enableSmartPixels">true</bool>
     <bool name="config_showScreenRecord">true</bool>
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
+    <bool name="config_smartChargingAvailable">true</bool>
 </resources>
