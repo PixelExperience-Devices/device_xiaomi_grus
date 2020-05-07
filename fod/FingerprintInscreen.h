@@ -54,6 +54,7 @@ public:
 
 private:
     sp<IXiaomiFingerprint> xiaomiFingerprintService;
+    bool mPressed;
 };
 
 }  // namespace implementation

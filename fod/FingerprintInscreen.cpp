@@ -84,6 +84,7 @@ float q1 = 58.82;
 
 FingerprintInscreen::FingerprintInscreen() {
     xiaomiFingerprintService = IXiaomiFingerprint::getService();
+    this->mPressed = false;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
@@ -107,14 +108,20 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_HBM);
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+    if (!this->mPressed) {
+        set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_HBM);
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+	this->mPressed = true;
+    }
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
-    set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_RESET);
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+    if (this->mPressed) {
+        set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_RESET);
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+	this->mPressed = false;
+    }
     return Void();
 }
 
