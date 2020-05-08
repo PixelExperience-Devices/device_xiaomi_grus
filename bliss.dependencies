@@ -8,7 +8,7 @@
   {
     "repository": "pengus77/vendor_xiaomi_grus",
     "target_path": "vendor/xiaomi/grus",
-    "revision": "lineage-17.0",
+    "revision": "q",
     "remote": "github"
   }
 ]
