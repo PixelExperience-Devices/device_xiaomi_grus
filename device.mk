@@ -557,4 +557,5 @@ PRODUCT_PACKAGES += \
     SimpleGalleryPro \
     SimpleCalculator \
     Exchange2 \
-    Email 
+    Email \
+    bromite-webview
