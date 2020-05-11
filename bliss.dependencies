@@ -2,7 +2,7 @@
   {
     "repository": "pengus77/kowalski-grus",
     "target_path": "kernel/xiaomi/grus",
-    "revision": "dev",
+    "revision": "dev-q",
     "remote": "github"
   },
   {
