@@ -1126,9 +1126,6 @@
 
     <string  translatable="false" name="config_wifi_framework_sap_2G_channel_list">1,6,11</string>
 
-    <!-- Whether the new Auto Selection Network UI should be shown -->
-    <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
-
     <bool name="config_adaptive_sleep_available">false</bool>
     <bool name="config_ui_enableFadingMarquee">false</bool>
     <bool name="config_enableSmartPixels">true</bool>
