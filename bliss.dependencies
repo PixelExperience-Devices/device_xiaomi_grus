@@ -12,7 +12,7 @@
     "remote": "github"
   },
   {
-    "repository": "MSe1969/android_external_bromite-webview",
+    "repository": "pengus77/android_external_bromite-webview",
     "target_path": "external/bromite-webview",
     "revision": "master",
     "remote": "github"
