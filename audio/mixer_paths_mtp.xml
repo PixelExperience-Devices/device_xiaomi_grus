@@ -506,7 +506,7 @@
     </path>
 
     <path name="ultrasound-output">
-        <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_48" />
+        <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_44" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
         <ctl name="EAR_S" value="Switch" />
