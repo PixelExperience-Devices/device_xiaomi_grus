@@ -548,6 +548,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LatinIME
 
+# Remove stock apps
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Override Apps
 PRODUCT_PACKAGES += \
     SimpleGalleryPro \
