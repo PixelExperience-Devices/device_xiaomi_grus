@@ -536,10 +536,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.xiaomi
 
-# Config panel
-PRODUCT_PACKAGES += \
-    ConfigPanel
-
 # vndfwk
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
