@@ -1039,6 +1039,15 @@
         </interface>
         <fqname>@1.0::IFingerprintInscreen/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.trust</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUsbRestrict</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <sepolicy>
         <version>29.0</version>
     </sepolicy>
