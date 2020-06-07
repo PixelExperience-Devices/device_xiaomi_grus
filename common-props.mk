@@ -36,7 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display density
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=480 \
+    ro.sf.lcd_density=400 \
     ro.display.type=oled \
     persist.debug.force_burn_in=true \
     persist.sys.sf.native_mode=0 \
