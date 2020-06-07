@@ -25,15 +25,15 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9 SE
 PRODUCT_MANUFACTURER := Xiaomi
 
-BUILD_FINGERPRINT := "google/flame/flame:10/QQ2A.200501.001.A3/6353761:user/release-keys"
+BUILD_FINGERPRINT := "google/flame/flame:10/QQ3A.200605.001/6392402:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="flame-user 10 QQ2A.200501.001 6353761 release-keys" \
+    PRIVATE_BUILD_DESC="flame-user 10 QQ3A.200605.001 6392402 release-keys" \
     PRODUCT_NAME="grus" \
     TARGET_DEVICE="grus"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/flame/flame:10/QQ2A.200501.001.A3/6353761:user/release-keys \
+    ro.build.fingerprint=google/flame/flame:10/QQ3A.200605.001/6392402:user/release-keys \
     ro.bliss.maintainer=pengus77
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
