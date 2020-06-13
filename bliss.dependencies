@@ -10,11 +10,5 @@
     "target_path": "vendor/xiaomi/grus",
     "revision": "q",
     "remote": "github"
-  },
-  {
-    "repository": "pengus77/android_external_bromite-webview",
-    "target_path": "external/bromite-webview",
-    "revision": "master",
-    "remote": "github"
   }
 ]

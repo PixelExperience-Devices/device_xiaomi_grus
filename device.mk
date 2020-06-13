@@ -554,5 +554,4 @@ PRODUCT_PACKAGES += \
     SimpleCalculator \
     Exchange2 \
     Email \
-    bromite-webview \
     DuckDuckGo
