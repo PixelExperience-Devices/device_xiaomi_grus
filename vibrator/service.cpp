@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.vibrator@1.1-service.xiaomi"
+#define LOG_TAG "android.hardware.vibrator@1.3-service.xiaomi"
 
-#include <android/hardware/vibrator/1.1/IVibrator.h>
+#include <android/hardware/vibrator/1.3/IVibrator.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
 #include <utils/Errors.h>
@@ -27,8 +27,8 @@
 
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
-using android::hardware::vibrator::V1_1::IVibrator;
-using android::hardware::vibrator::V1_1::implementation::Vibrator;
+using android::hardware::vibrator::V1_3::IVibrator;
+using android::hardware::vibrator::V1_3::implementation::Vibrator;
 
 const static std::string OVERRIDE_PATH = "/sys/class/leds/vibrator/vmax_override";
 const static std::string ENABLE_PATH = "/sys/class/leds/vibrator/activate";
