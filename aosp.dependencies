@@ -1,14 +1,14 @@
 [
   {
-    "repository": "pengus77/kowalski-grus",
+    "repository": "ljmf00/android_kernel_xiaomi_grus",
     "target_path": "kernel/xiaomi/grus",
-    "revision": "dev-q",
+    "revision": "master",
     "remote": "github"
   },
   {
-    "repository": "pengus77/vendor_xiaomi_grus",
+    "repository": "ljmf00/android_vendor_xiaomi_grus",
     "target_path": "vendor/xiaomi/grus",
-    "revision": "q",
+    "revision": "ten",
     "remote": "github"
   }
 ]
