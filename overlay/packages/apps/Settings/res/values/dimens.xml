@@ -12,6 +12,10 @@
 -->
 
 <resources>
-    <dimen name="fingerprint_dot_radius">8dp</dimen>
+    <dimen name="fingerprint_dot_radius">8.0dip</dimen>
     <item name="fingerprint_sensor_location_fraction_y" type="fraction">85%</item>
+    <dimen name="fingerprint_find_sensor_graphic_size">190.0dip</dimen>
+    <dimen name="fingerprint_find_sensor_padding_top">16.0dip</dimen>
+    <dimen name="fingerprint_finish_max_size">288.0dip</dimen>
+    <item type="dimen" name="fingerprint_illustration_aspect_ratio">2.6</item>
 </resources>

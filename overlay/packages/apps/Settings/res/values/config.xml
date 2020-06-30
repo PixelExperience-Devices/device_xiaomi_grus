@@ -21,9 +21,12 @@
          1 = front
          2 = left side
          3 = right side
-	 4 = FOD (front)
     -->
-    <integer name="config_fingerprintSensorLocation">4</integer>
+    <integer name="config_fingerprintSensorLocation">1</integer>
+
+    <bool name="config_haveNotch">true</bool>
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
+
     <bool name="config_enableManualSubProvisioning">true</bool>
 
     <!-- Whether or not the device is capable of multiple levels of vibration intensity.
@@ -33,6 +36,4 @@
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
     <bool name="config_show_mobile_plan">true</bool>
-
-    <string name="bliss_maintainer">pengus77</string>
 </resources>

@@ -18,17 +18,22 @@
 */
 -->
 <resources>
-    <dimen name="status_bar_height_portrait">79px</dimen>
-    <dimen name="status_bar_height">79px</dimen>
+    <!-- Height of the status bar -->
+    <dimen name="status_bar_height_portrait">24.0dip</dimen>
 
+    <!-- Height of the status bar in landscape -->
     <dimen name="status_bar_height_landscape">24dp</dimen>
 
     <dimen name="notch_height">79px</dimen>
     <dimen name="notch_width">124px</dimen>
 
     <!-- Width of the navigation bar when it is placed vertically on the screen -->
-    <dimen name="navigation_bar_width">32.0dip</dimen>
-    <dimen name="navigation_bar_height">40.0dip</dimen>
+    <dimen name="navigation_bar_height">48.0dip</dimen>
+    <dimen name="navigation_bar_height_car_mode">96.0dip</dimen>
+    <dimen name="navigation_bar_height_landscape">48.0dip</dimen>
+    <dimen name="navigation_bar_height_landscape_car_mode">96.0dip</dimen>
+    <dimen name="navigation_bar_width">48.0dip</dimen>
+    <dimen name="navigation_bar_width_car_mode">96.0dip</dimen>
 
     <dimen name="rounded_corner_radius_top">108px</dimen>
     <dimen name="rounded_corner_radius_bottom">126px</dimen>

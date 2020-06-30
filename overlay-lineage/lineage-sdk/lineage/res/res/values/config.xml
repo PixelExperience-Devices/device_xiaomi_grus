@@ -50,6 +50,7 @@
 
     <!-- Whether device has a notch -->
     <bool name="config_haveNotch">true</bool>
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
 
     <integer name="config_backKillTimeout">500</integer>
 </resources>
