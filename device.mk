@@ -539,6 +539,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.xiaomi
 
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # vndfwk
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
