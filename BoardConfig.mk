@@ -29,6 +29,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 
+# Binder
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
