@@ -551,10 +551,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RemovePackages
 
-# Override Apps
-PRODUCT_PACKAGES += \
-    SimpleGalleryPro \
-    SimpleCalculator \
-    Exchange2 \
-    Email \
-    DuckDuckGo
