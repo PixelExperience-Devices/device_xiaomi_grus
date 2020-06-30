@@ -547,6 +547,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LatinIME
 
+# Wallpapers
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt
+
 # Remove stock apps
 PRODUCT_PACKAGES += \
     RemovePackages
