@@ -188,8 +188,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.sdm710 \
     memtrack.sdm710 \
     android.frameworks.displayservice@1.0 \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@2.0 \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
@@ -205,6 +204,7 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.7.vendor \
     vendor.display.config@1.7 \
     vendor.qti.hardware.display.allocator@1.0-service \
+    vendor.qti.hardware.display.mapper@3.0.vendor \
     libsdm-disp-vndapis
 
 # DRM

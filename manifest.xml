@@ -441,11 +441,12 @@
     <hal format="hidl">
         <name>vendor.display.config</name>
         <transport>hwbinder</transport>
-        <version>1.7</version>
+        <version>1.11</version>
         <interface>
             <name>IDisplayConfig</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.11::IDisplayConfig/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.display.postproc</name>
