@@ -56,6 +56,7 @@ namespace inscreen {
 namespace V1_0 {
 namespace implementation {
 
+
 FingerprintInscreen::FingerprintInscreen() {
     xiaomiFingerprintService = IXiaomiFingerprint::getService();
 }
@@ -105,12 +106,12 @@ Return<void> FingerprintInscreen::onHideFODView() {
 }
 
 Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t vendorCode) {
-    LOG(ERROR) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode << "\n";
+    LOG(ERROR) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode;
     return false;
 }
 
 Return<bool> FingerprintInscreen::handleError(int32_t error, int32_t vendorCode) {
-    LOG(ERROR) << "error: " << error << ", vendorCode: " << vendorCode << "\n";
+    LOG(ERROR) << "error: " << error << ", vendorCode: " << vendorCode;
     return false;
 }
 
