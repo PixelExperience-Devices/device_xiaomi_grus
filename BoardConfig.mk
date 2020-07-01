@@ -10,8 +10,15 @@ BUILD_BROKEN_DUP_RULES := true
 
 DEVICE_PATH := device/xiaomi/grus
 
-# Security Patch Level
-VENDOR_SECURITY_PATCH := 2020-05-01
+# Set Vendor SPL to match platform
+VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
+
+# Set boot SPL
+BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
+
+# Vendor init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_grus
+TARGET_RECOVERY_DEVICE_MODULES := libinit_grus
 
 # Architecture
 TARGET_ARCH := arm64
