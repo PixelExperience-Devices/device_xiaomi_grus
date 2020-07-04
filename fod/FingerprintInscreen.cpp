@@ -27,8 +27,8 @@
 #define PARAM_NIT_NONE 0
 
 #define DISPPARAM_PATH "/sys/class/drm/card0-DSI-1/disp_param"
-#define DISPPARAM_FOD_BACKLIGHT_HBM "0xD007FF"
-#define DISPPARAM_FOD_BACKLIGHT_RESET "0xD01000"
+#define DISPPARAM_FOD_BACKLIGHT_HBM "0x1D007FF"
+#define DISPPARAM_FOD_BACKLIGHT_RESET "0x2D01000"
 
 #define FOD_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
 #define FOD_STATUS_ON 1
@@ -38,7 +38,17 @@
 #define FOD_SENSOR_Y 1920
 #define FOD_SENSOR_SIZE 173
 
+#define FINGERPRINT_ERROR_VENDOR 8
+
 namespace {
+
+template <typename T>
+static T get(const std::string& path, const T& def) {
+    std::ifstream file(path);
+    T result;
+    file >> result;
+    return file.fail() ? def : result;
+}
 
 template <typename T>
 static void set(const std::string& path, const T& value) {
@@ -59,6 +69,7 @@ namespace implementation {
 
 FingerprintInscreen::FingerprintInscreen() {
     xiaomiFingerprintService = IXiaomiFingerprint::getService();
+    this->mPressed = false;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
@@ -82,14 +93,23 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_HBM);
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+
+    if (!this->mPressed) {
+    	set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_HBM);
+    	xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+    	this->mPressed = true;
+    }
+
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
-    set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_RESET);
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+	if (this->mPressed) {
+    	set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_RESET);
+    	xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+    	this->mPressed = false;
+    }
+
     return Void();
 }
 
@@ -99,20 +119,21 @@ Return<void> FingerprintInscreen::onShowFODView() {
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
+    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
     set(FOD_STATUS_PATH, FOD_STATUS_OFF);
     set(DISPPARAM_PATH, DISPPARAM_FOD_BACKLIGHT_RESET);
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+
     return Void();
 }
 
 Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t vendorCode) {
-    LOG(ERROR) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode;
+    LOG(INFO) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode;
     return false;
 }
 
 Return<bool> FingerprintInscreen::handleError(int32_t error, int32_t vendorCode) {
     LOG(ERROR) << "error: " << error << ", vendorCode: " << vendorCode;
-    return false;
+    return error == FINGERPRINT_ERROR_VENDOR && vendorCode == 6;
 }
 
 Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
@@ -122,11 +143,13 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
     float alpha;
 
-    if (brightness > 62) {
-        alpha = 1.0 - pow(brightness / 255.0 * 430.0 / 600.0, 0.45);
-    } else {
-        alpha = 1.0 - pow(brightness / 200.0, 0.45);
-    }
+    float p1 = 7.747 * pow(10, -8);
+    float p2 = -0.0004924;
+    float p3 = 0.6545;
+    float p4 = 58.82;
+    float q1 = 58.82;
+
+    alpha = (p1 * pow(brightness, 3) + p2 * pow(brightness, 2) + p3 * brightness + p4) / (brightness + q1);
 
     return 255 * alpha;
 }
@@ -135,7 +158,7 @@ Return<bool> FingerprintInscreen::shouldBoostBrightness() {
     return false;
 }
 
-Return<void> FingerprintInscreen::setCallback(const sp<::vendor::lineage::biometrics::fingerprint::inscreen::V1_0::IFingerprintInscreenCallback>& callback) {
+Return<void> FingerprintInscreen::setCallback(const sp<IFingerprintInscreenCallback>& callback) {
     (void) callback;
     return Void();
 }
