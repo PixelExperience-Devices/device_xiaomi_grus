@@ -440,6 +440,16 @@
         <fqname>@1.2::IDisplayColor/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.display.mapper</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>3.0</version>
+        <interface>
+            <name>IQtiMapper</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@3.0::IQtiMapper/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.display.config</name>
         <transport>hwbinder</transport>
         <version>1.11</version>
