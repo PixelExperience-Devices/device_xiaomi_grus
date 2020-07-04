@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <array name="config_doze_brightness_sensor_to_brightness">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </array>
+
+    <array name="config_doze_brightness_sensor_to_scrim_opacity">
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>253</item>
+        <item>@null</item>
+        <item>127</item>
+    </array>
+
+</resources>
