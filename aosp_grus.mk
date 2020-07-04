@@ -9,7 +9,6 @@ WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_APPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := false
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
