@@ -274,6 +274,11 @@ service thermal-engine /system/vendor/bin/thermal-engine  -T
 #   user root
 #   group root
 
+service adsprpcd_root /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+
 service adsprpcd /vendor/bin/adsprpcd rootpd
    class main
    user system
