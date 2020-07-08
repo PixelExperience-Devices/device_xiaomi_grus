@@ -544,6 +544,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+# XiaomiPocketMode
+PRODUCT_PACKAGES += \
+    XiaomiPocketMode
+
 # vndfwk
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
