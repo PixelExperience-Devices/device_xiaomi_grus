@@ -261,7 +261,9 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 include device/qcom/sepolicy/sepolicy.mk
 
 # Ignore SELinux neverallows
-SELINUX_IGNORE_NEVERALLOWS := true
+ifneq ($(TARGET_BUILD_VARIANT),user)
+  SELINUX_IGNORE_NEVERALLOWS := true
+endif
 
 # RIL
 PROTOBUF_SUPPORTED := true
