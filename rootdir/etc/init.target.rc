@@ -82,6 +82,10 @@ service sec_nvm /vendor/bin/sec_nvm
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
+    chmod 0664 /sys/kernel/wlan/power_stats
+    chmod 0664 sys/power/system_sleep/stats
+    chmod 0664 /sys/power/rpmh_stats/master_stats
+
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
