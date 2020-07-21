@@ -264,6 +264,9 @@ endif
 # RIL
 PROTOBUF_SUPPORTED := true
 
+# Sensors
+USE_SENSOR_MULTI_HAL := true
+
 # Telephony
 ENABLE_VENDOR_RIL_SERVICE := true
 
