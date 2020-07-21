@@ -1,5 +1,41 @@
+# Camera read only property
+type camera_ro_prop, property_type;
+
+# thermal engine type
 type thermal_engine_prop, property_type;
 
+# dpps type
 type vendor_dpps_prop, property_type;
 
+# fp type
 type vendor_fp_prop, property_type;
+
+# Vendor power type
+type vendor_power_prop, property_type;
+
+# System manufacturer property
+type system_manufacturer_prop, property_type;
+
+# Vendor build type
+type vendor_build_type_prop, property_type;
+
+# Vendor fastrpc type
+type vendor_fastrpc_prop, property_type;
+
+# Vendor aware available type
+type vendor_aware_available_prop, property_type;
+
+# Persist displayfeature type
+type persist_displayfeature_prop, property_type;
+
+# Render property
+type render_prop, property_type;
+
+# Panel display property type
+type panel_display_prop, property_type;
+
+# Panel color property type
+type panel_color_prop, property_type;
+
+# Factor property
+type factor_prop, property_type;

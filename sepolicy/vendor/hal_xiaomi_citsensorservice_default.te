@@ -1,0 +1,16 @@
+type hal_xiaomi_citsensorservice_default, domain;
+type hal_xiaomi_citsensorservice_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(hal_xiaomi_citsensorservice_default)
+
+wakelock_use(hal_xiaomi_citsensorservice_default)
+
+get_prop(hal_xiaomi_citsensorservice_default, sensors_prop)
+
+allow hal_xiaomi_citsensorservice_default hal_xiaomi_citsensorservice_default_exec:file execute_no_trans;
+allow hal_xiaomi_citsensorservice_default hidl_base_hwservice:hwservice_manager add;
+allow hal_xiaomi_citsensorservice_default hwservicemanager_prop:file { read open getattr map };
+allow hal_xiaomi_citsensorservice_default hwservicemanager:binder { call transfer };
+allow hal_xiaomi_citsensorservice_default input_device:chr_file { ioctl open read write };
+allow hal_xiaomi_citsensorservice_default input_device:dir { open read search };
+allow hal_xiaomi_citsensorservice_default citsensorservice_hwservice:hwservice_manager { add find };

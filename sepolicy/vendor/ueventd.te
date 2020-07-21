@@ -1,0 +1,3 @@
+ typeattribute ueventd data_between_core_and_vendor_violators;
+
+allow ueventd ir_dev_file:chr_file { create getattr setattr };

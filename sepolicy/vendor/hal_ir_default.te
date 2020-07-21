@@ -1,0 +1,7 @@
+type ir_dev_file, file_type;
+
+allow hal_ir_default ir_dev_file:chr_file { open read write ioctl };
+allow hal_ir_default sysfs_leds:lnk_file read;
+allow hal_ir_default sysfs_leds:file rw_file_perms;
+allow hal_ir_default sysfs_leds:dir r_dir_perms;
+ allow hal_ir_default sysfs_ir:file rw_file_perms; 

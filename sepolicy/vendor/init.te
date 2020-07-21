@@ -1,0 +1,17 @@
+allow init hwservicemanager:binder call;
+
+allow init sysfs_leds:file { open read write };
+allow init sysfs_usb_supply:file { open read };
+allow init sysfs_battery_supply:file { open read };
+allow init hal_wechat_exec:file execute;
+allow init hal_mfidoca_default_exec:file execute;
+allow init hal_mlipay_default_exec:file execute;
+allow init hal_mtdservice_default_exec:file execute;
+allow init hal_tidaservice_default_exec:file execute;
+allow init hal_vsimapp_default_exec:file execute;
+allow init hal_xiaomi_citsensorservice_default_exec:file execute;
+allow init hal_misys_default_exec:file execute;
+allow init hal_touchfeature_xiaomi_default_exec:file execute;
+allow init hal_dumpstate_impl_exec:file { execute };
+allow init hal_displayfeature_xiaomi_default_exec:file { execute };
+allow init adsprpcd_file:file mounton;

@@ -1,0 +1,1 @@
+get_prop(hal_qteeconnector_qti, hwservicemanager_prop)

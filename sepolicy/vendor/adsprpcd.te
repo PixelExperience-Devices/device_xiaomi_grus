@@ -1,0 +1,24 @@
+allow adsprpcd qdsp_device:chr_file r_file_perms;
+
+## For reading dir/files on /dsp
+r_dir_file(adsprpcd, firmware_file)
+r_dir_file(adsprpcd, adsprpcd_file)
+
+allow adsprpcd ion_device:chr_file rw_file_perms;;
+allow adsprpcd system_file:dir r_dir_perms;
+
+r_dir_file(adsprpcd, dsp_file)
+allow adsprpcd dsp_file:dir r_dir_perms;
+allow adsprpcd dsp_file:file r_file_perms;
+
+type adsprpcd_device, dev_type;
+
+allow adsprpcd adsprpcd_device:chr_file rw_file_perms;
+allow adsprpcd mnt_vendor_file:dir r_dir_perms;
+allow adsprpcd sensors_persist_file:dir create_dir_perms;
+allow adsprpcd sensors_persist_file:file create_file_perms;
+
+allow adsprpcd persist_file:dir create_dir_perms;
+allow adsprpcd persist_file:file create_file_perms;
+
+r_dir_file(adsprpcd sysfs_graphics)

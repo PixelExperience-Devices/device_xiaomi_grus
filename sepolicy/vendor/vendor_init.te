@@ -1,0 +1,15 @@
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
+# Allow vendor_init to set persist_camera_prop
+set_prop(vendor_init, camera_prop)
+set_prop(vendor_init, persist_camera_prop)
+set_prop(vendor_init, system_prop)
+
+# Allow vendor_init to write to sysfs_ssr_toggle
+allow vendor_init sysfs_ssr_toggle:file w_file_perms;
+
+# Allow vendor_init to write to /dev/blkio
+allow vendor_init blkio:file w_file_perms;
+
+allow vendor_init touchfeature_device:chr_file setattr;
+allow vendor_init ir_dev_file:chr_file { getattr setattr };
