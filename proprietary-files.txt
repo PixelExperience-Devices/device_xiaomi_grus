@@ -542,7 +542,6 @@ vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
 -vendor/app/TimeService/TimeService.apk
 -vendor/app/CneApp/CneApp.apk
 -vendor/app/com.qualcomm.qti.improvetouch.service/com.qualcomm.qti.improvetouch.service.apk
-vendor/bin/ftmdaemon
 vendor/bin/qdcmss
 vendor/bin/imsdatadaemon
 vendor/bin/mm-pp-dpps

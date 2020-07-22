@@ -613,11 +613,6 @@ service vendor.bt_logger /system/bin/bt_logger
    disabled
    oneshot
 
-service ftmd /system/vendor/bin/ftmdaemon -n -dd
-    class late_start
-    user root
-    group root system diag vendor_qti_diag
-
 service qmiproxy /system/bin/qmiproxy
     class main
     user radio
