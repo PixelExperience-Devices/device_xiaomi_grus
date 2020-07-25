@@ -1,14 +1,13 @@
 [
   {
-    "repository": "ljmf00/android_kernel_xiaomi_grus",
-    "target_path": "kernel/xiaomi/grus",
-    "revision": "master",
-    "remote": "github"
+    "repository": "vendor_xiaomi_grus",
+    "target_path": "vendor/xiaomi/grus",
+    "branch": "ten",
+    "remote": "pixel-devices-bitbucket"
   },
   {
-    "repository": "ljmf00/android_vendor_xiaomi_grus",
-    "target_path": "vendor/xiaomi/grus",
-    "revision": "ten",
-    "remote": "github"
+    "repository": "kernel_xiaomi_grus",
+    "target_path": "kernel/xiaomi/grus",
+    "branch": "ten"
   }
 ]
