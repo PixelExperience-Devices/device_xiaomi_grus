@@ -537,10 +537,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AntHalService
 
-# Display calibration
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.xiaomi
-
 # XiaomiParts
 PRODUCT_PACKAGES += \
     XiaomiParts
