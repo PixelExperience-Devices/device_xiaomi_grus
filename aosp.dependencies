@@ -8,7 +8,13 @@
   {
     "repository": "ljmf00/android_vendor_xiaomi_grus",
     "target_path": "vendor/xiaomi/grus",
-    "revision": "ten",
+    "revision": "mainline",
     "remote": "github"
+  },
+  {
+    "repository": "lsferreira/android_vendor_xiaomi-firmware",
+    "target_path": "vendor/xiaomi-firmware",
+    "revision": "mainline",
+    "remote": "bitbucket"
   }
 ]

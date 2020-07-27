@@ -21,6 +21,9 @@ $(call inherit-product, $(LOCAL_PATH)/audio/sdm710.mk)
 # setupe dalvik vm properties
 $(call inherit-product, $(LOCAL_PATH)/configs/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Firmware
+$(call inherit-product, vendor/xiaomi-firmware/grus/firmware.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
