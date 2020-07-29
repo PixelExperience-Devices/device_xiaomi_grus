@@ -681,14 +681,11 @@ vendor/etc/thermal-engine-sdm710-high.conf
 vendor/etc/cacert_location.pem
 vendor/etc/spk_cal_pinknoise.wav
 vendor/etc/lm/AdaptLaunchFeature.xml
-vendor/etc/qdcm_calib_data_Dual_nt35597_cmd_mode_dsi_truly_panel_without_DSC.xml
-vendor/etc/qdcm_calib_data_nt35597_video_mode_dsi_truly_panel_with_DSC.xml
 vendor/etc/spk_cal_silence.wav
 vendor/etc/data/netmgr_config.xml
 vendor/etc/data/dsi_config.xml
 vendor/etc/thermal-engine-sdm710-pubgmhd.conf
 vendor/etc/rcv.wav
-vendor/etc/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml
 vendor/etc/init/dpmQmiMgr.rc
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/android.hardware.drm@1.0-service.rc
@@ -776,7 +773,6 @@ vendor/etc/cs35l41_cal.wav
 vendor/etc/cirrus.cfg
 vendor/etc/spk_cal_sweep.wav
 vendor/etc/powerhint.xml
-vendor/etc/qdcm_calib_data_samsung_ea8076_fhd_cmd_dsi_panel.xml
 vendor/etc/camera/body_slim_ui9_params.config
 vendor/etc/camera/model_back.dlc
 vendor/etc/camera/libalfpc_tuning.bin
