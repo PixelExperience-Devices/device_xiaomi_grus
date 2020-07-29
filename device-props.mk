@@ -1,3 +1,10 @@
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qc.sdk.audio.ssr=false \
+    ro.qc.sdk.audio.fluencetype=fluence \
+    persist.audio.fluence.mode=endfire \
+    persist.audio.handset.mic=digital
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cfa.thres.front=0 \
@@ -10,7 +17,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.multicam.fpsmatch=TRUE \
     persist.vendor.camera.enableAdvanceFeatures=0x3E7 \
     persist.vendor.camera.multicam.framesync=1 \
-    persist.vendor.camera.multicam=TRUE
+    persist.vendor.camera.multicam=TRUE \
+    persist.camera.eis.enable=1 \
+    persist.camera.is_mode=4 \
+    persist.camera.is_type=4 \
+    persist.camera.max.previewfps=60
 
 # Google Assistant
 PRODUCT_PRODUCT_PROPERTIES += \
