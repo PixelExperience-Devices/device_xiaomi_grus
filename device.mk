@@ -171,7 +171,7 @@ PRODUCT_PACKAGES += \
     libxml2 \
     vendor.qti.hardware.camera.device@1.0.vendor \
     libdng_sdk.vendor \
-    Snap
+    GoogleCamera
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -403,7 +403,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
-    $(LOCAL_PATH)/permissions/com.custom.ambient.display.xml:system/etc/permissions/com.custom.ambient.display.xml
+    $(LOCAL_PATH)/permissions/com.custom.ambient.display.xml:system/etc/permissions/com.custom.ambient.display.xml \
+    $(LOCAL_PATH)/permissions/org.codeaurora.snapcam.xml:system/etc/permissions/org.codeaurora.snapcam.xml
 
 # Hotword Enrollment
 PRODUCT_COPY_FILES += \
