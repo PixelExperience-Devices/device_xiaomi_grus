@@ -165,7 +165,6 @@ vendor/lib64/lib-imsxml.so
 vendor/lib64/libperfconfig.so
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/librcc.so
-vendor/lib64/libdrm.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
 vendor/lib64/libnetmgr_nr_fusion.so
@@ -226,7 +225,6 @@ vendor/lib64/libperipheral_client.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib64/libizat_core.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
-vendor/lib64/libgui_vendor.so
 vendor/lib64/libssd.so
 vendor/lib64/libvpplibrary.so
 vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
@@ -309,7 +307,6 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib64/hw/consumerir.default.so
 vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/hw/audio.primary.sdm710.so
-vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
 vendor/lib64/hw/fingerprint.goodix_fod.so
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
@@ -321,7 +318,6 @@ vendor/lib64/hw/sound_trigger.primary.sdm710.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libqdMetaData.so
 vendor/lib64/libsettings.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libVDSuperPhotoAPI.so
@@ -356,12 +352,9 @@ vendor/lib64/libqti-perfd.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libmfido.so
 -vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/unnhal-acc-adreno.so
 vendor/lib64/libaudio_log_utils.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
--vendor/lib/libsdm-disp-vndapis.so
 vendor/lib64/libwms.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libalCFR.so
@@ -389,7 +382,6 @@ vendor/lib64/libqdi.so
 vendor/lib64/libmeters.so
 vendor/lib64/qtimutex.so
 vendor/lib64/libcneoplookup.so
-vendor/lib64/libqservice.so
 vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
 vendor/lib64/libminkdescriptor.so
@@ -424,11 +416,9 @@ vendor/lib64/libarcsoft_dualcam_refocus_rear_w.so
 vendor/lib64/libssccalapi.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/libdrmutils.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
 vendor/lib64/libarcsoft_high_dynamic_range.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/lib64/unnhal-acc-hvx.so
@@ -453,9 +443,7 @@ vendor/lib64/libstagefrighthw.so
 vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/libjnihelper.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
 vendor/lib64/libcdsp_default_listener.so
-vendor/lib64/libdisplaydebug.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
@@ -493,7 +481,6 @@ vendor/lib64/libmt.so
 vendor/lib64/libsdsprpc.so
 vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/librs_adreno.so
-vendor/lib64/libqdutils.so
 vendor/lib64/libarcsoft_dualcam_refocus.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libxml.so
@@ -529,7 +516,6 @@ vendor/lib64/libalhLDC.so
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 vendor/lib64/libscveObjectSegmentation_stub.so
 vendor/lib64/libmm-omxcore.so
-vendor/lib64/libgpu_tonemapper.so
 vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libswvdec.so
 vendor/lib64/libbt-hidlclient.so
@@ -577,9 +563,7 @@ vendor/bin/vsimd
 vendor/bin/vppservice
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
 vendor/bin/hw/qcrild
-vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/bin/hw/vendor.qti.hardware.display.allocator@1.0-service
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
@@ -587,7 +571,6 @@ vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
@@ -735,8 +718,6 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
 vendor/etc/init/imsrcsd.rc
 vendor/etc/init/vppservice.rc
-vendor/etc/init/vendor.qti.hardware.display.allocator@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
 vendor/etc/init/android.hardware.drm@1.2-service.clearkey.rc
 vendor/etc/init/wfdvndservice.rc
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
@@ -879,7 +860,6 @@ vendor/lib/libFaceGrade.so
 vendor/lib/libperfconfig.so
 vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib/librcc.so
-vendor/lib/libdrm.so
 vendor/lib/libtinyxml2_1.so
 vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0.so
 vendor/lib/libnetmgr_nr_fusion.so
@@ -935,7 +915,6 @@ vendor/lib/libperipheral_client.so
 vendor/lib/libmibokeh_712.so
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.radio.lpa@1.0.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libssd.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libbase64.so
@@ -1017,7 +996,6 @@ vendor/lib/hw/com.qti.chi.override.so
 vendor/lib/hw/consumerir.default.so
 vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib/hw/audio.primary.sdm710.so
-vendor/lib/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
 vendor/lib/hw/fingerprint.goodix_fod.so
 vendor/lib/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
@@ -1030,7 +1008,6 @@ vendor/lib/hw/camera.qcom.so
 vendor/lib/hw/sound_trigger.primary.sdm710.so
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/libqdMetaData.so
 vendor/lib/libsettings.so
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/libVDSuperPhotoAPI.so
@@ -1070,10 +1047,9 @@ vendor/lib/libalRnBRT_GL_GBWRAPPER.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libconfigdb.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib/libril-qc-hal-qmi.so
 vendor/lib/libaudio_log_utils.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
+-vendor/lib/libsdm-disp-vndapis.so
 vendor/lib/libwms.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libalCFR.so
@@ -1101,7 +1077,6 @@ vendor/lib/libfastrpc_utf_stub.so
 vendor/lib/libqdi.so
 vendor/lib/qtimutex.so
 vendor/lib/libcneoplookup.so
-vendor/lib/libqservice.so
 vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0.so
 vendor/lib/com.qualcomm.qti.imscmservice@2.1.so
 vendor/lib/libminkdescriptor.so
@@ -1143,7 +1118,6 @@ vendor/lib/libqti-utils.so
 vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib/libpn548ad_fw.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
 vendor/lib/libarcsoft_high_dynamic_range.so
 vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/lib/libOmxEvrcEnc.so
@@ -1166,10 +1140,8 @@ vendor/lib/libstagefrighthw.so
 vendor/lib/vendor.qti.hardware.data.iwlan@1.0.so
 vendor/lib/vendor.display.color@1.0.so
 vendor/lib/libjnihelper.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
 vendor/lib/libcdsp_default_listener.so
 vendor/lib/libmegface.so
-vendor/lib/libdisplaydebug.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib/libadsp_default_listener.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.2.so
@@ -1284,7 +1256,6 @@ vendor/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so
 vendor/lib/libsdsprpc.so
 vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/librs_adreno.so
-vendor/lib/libqdutils.so
 vendor/lib/libarcsoft_dualcam_refocus.so
 vendor/lib/libdsutils.so
 vendor/lib/libxml.so
@@ -1348,7 +1319,6 @@ vendor/lib/libMegviiFacepp-0.5.2.so
 -vendor/lib/libthermalclient.so
 vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libmm-omxcore.so
-vendor/lib/libgpu_tonemapper.so
 vendor/lib/libsnsdiaglog.so
 vendor/lib/libswvdec.so
 vendor/lib/libwfdconfigutils_proprietary.so

@@ -430,16 +430,6 @@
         <fqname>@2.1::IUceService/com.qualcomm.qti.uceservice</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.display.color</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IDisplayColor</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.2::IDisplayColor/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.display.mapper</name>
         <transport arch="32+64">passthrough</transport>
         <version>3.0</version>
@@ -458,16 +448,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.11::IDisplayConfig/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.display.postproc</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IDisplayPostproc</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IDisplayPostproc/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.goodix.hardware.biometrics.fingerprint</name>
@@ -628,16 +608,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.0::IPerf/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qdutils_disp</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IQdutilsDisp</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IQdutilsDisp/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.qteeconnector</name>
@@ -886,16 +856,6 @@
             <instance>imsrtpservice</instance>
         </interface>
         <fqname>@2.1::IRTPService/imsrtpservice</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.xiaomi.hardware.citsensorservice</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>ICitSensorService</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::ICitSensorService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.fingerprintextension</name>
