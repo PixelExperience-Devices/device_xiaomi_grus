@@ -84,3 +84,9 @@ def AddImage(info, input_zip, basename, dest):
 def OTA_InstallEnd(info, input_zip):
   AddImage(info, input_zip, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
   return
+
+def AddModemAssertion(info, input_zip):
+  return
+
+def AddVendorAssertion(info, input_zip):
+  return
