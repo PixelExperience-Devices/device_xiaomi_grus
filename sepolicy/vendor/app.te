@@ -11,3 +11,5 @@ allow system_server sysfs_battery_supply:file { getattr open read write };
 allow system_server sysfs_usb_supply:file { getattr open read write };
 
 allow { appdomain -isolated_app } adsprpcd_file:dir r_dir_perms;
+
+dontaudit untrusted_app hal_memtrack_hwservice:hwservice_manager find;
