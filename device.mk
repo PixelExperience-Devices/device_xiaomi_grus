@@ -549,7 +549,7 @@ PRODUCT_PACKAGES += \
     hwaddrs \
     libbt-vendor \
     libbtconfigstore \
-    vendor.qti.hardware.btconfigstore@1.0
+    vendor.qti.hardware.btconfigstore@1.0.vendor 
 
 # qti telephony
 PRODUCT_PACKAGES += \
