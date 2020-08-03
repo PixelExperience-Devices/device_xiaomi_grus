@@ -23,7 +23,7 @@
 #include <cmath>
 
 #define COMMAND_NIT 10
-#define PARAM_NIT_FOD 3
+#define PARAM_NIT_FOD 1
 #define PARAM_NIT_NONE 0
 
 #define DISPPARAM_PATH "/sys/class/drm/card0-DSI-1/disp_param"
@@ -34,9 +34,11 @@
 #define FOD_STATUS_ON 1
 #define FOD_STATUS_OFF 0
 
-#define FOD_SENSOR_X 455
-#define FOD_SENSOR_Y 1920
-#define FOD_SENSOR_SIZE 173
+#define FOD_SENSOR_X 453
+#define FOD_SENSOR_Y 1918
+#define FOD_SENSOR_SIZE 174
+
+#define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 
 #define FINGERPRINT_ERROR_VENDOR 8
 
@@ -140,16 +142,15 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
     return Void();
 }
 
-Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
+Return<int32_t> FingerprintInscreen::getDimAmount(int32_t /*brightness*/) {
+    int realBrightness = get(BRIGHTNESS_PATH, 0);
     float alpha;
 
-    float p1 = 7.747 * pow(10, -8);
-    float p2 = -0.0004924;
-    float p3 = 0.6545;
-    float p4 = 58.82;
-    float q1 = 58.82;
-
-    alpha = (p1 * pow(brightness, 3) + p2 * pow(brightness, 2) + p3 * brightness + p4) / (brightness + q1);
+    if (realBrightness > 500) {
+        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.455);
+    } else {
+        alpha = 1.0 - pow(realBrightness / 1680.0, 0.455);
+    }
 
     return 255 * alpha;
 }
@@ -170,4 +171,3 @@ Return<void> FingerprintInscreen::setCallback(const sp<IFingerprintInscreenCallb
 }  // namespace biometrics
 }  // namespace lineage
 }  // namespace vendor
-
