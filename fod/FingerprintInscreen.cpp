@@ -23,7 +23,7 @@
 #include <cmath>
 
 #define COMMAND_NIT 10
-#define PARAM_NIT_FOD 1
+#define PARAM_NIT_FOD 3
 #define PARAM_NIT_NONE 0
 
 #define DISPPARAM_PATH "/sys/class/drm/card0-DSI-1/disp_param"
