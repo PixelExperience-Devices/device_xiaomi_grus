@@ -443,7 +443,7 @@
          gradually in the same manner that normally happens when the screen is on according to the
          brightening or dimming debounce thresholds.  As a result, it may take somewhat longer to
          adapt to the environment.  This mode may be better suited for watches. -->
-    <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">true</bool>
+    <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">false</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
@@ -1215,5 +1215,6 @@
     <bool name="config_wifi_link_probing_supported">true</bool>
 
     <bool name="config_hasVowifi">true</bool>
+    <bool name="config_targetUsesInKernelDimming">false</bool>
 
 </resources>
